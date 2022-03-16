@@ -1,0 +1,364 @@
+:root {
+  --penguin-face: white;
+  --penguin-picorna: orange;
+  --penguin-skin: black;
+}
+
+body {
+  background: radial-gradient(closest-corner circle at 85% 15%, #ffcf33, #ffcf33 20%, #ffff66 21%, #bbeeff 100%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: clip;
+}
+
+/*LEFT MOUNTAIN*/
+.left-mountain {
+  width: 300px;
+  height: 300px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cbf1e4), to(#50b7ff));
+  background: linear-gradient(#cbf1e4, #50b7ff);
+  position: absolute;
+  -webkit-transform: skew(0deg, 44deg);
+          transform: skew(0deg, 44deg);
+  z-index: 2;
+  margin-top: 100px;
+}
+
+/*BACK MOUNTAIN*/
+.back-mountain {
+  width: 300px;
+  height: 300px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#cbf1e4), to(#2faaff));
+  background: linear-gradient(#cbf1e4, #2faaff);
+  position: absolute;
+  z-index: 1;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 110px;
+  top: 225px;
+}
+
+/*PENGUIN*/
+.penguin {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  margin-top: 75px;
+  z-index: 4;
+  position: relative;
+  -webkit-transition: -webkit-transform 1s ease-in-out 0ms;
+  transition: -webkit-transform 1s ease-in-out 0ms;
+  transition: transform 1s ease-in-out 0ms;
+  transition: transform 1s ease-in-out 0ms, -webkit-transform 1s ease-in-out 0ms;
+}
+
+.penguin * {
+  position: absolute;
+}
+
+.penguin:active {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  cursor: not-allowed;
+}
+
+/*PENGUIN - HEAD*/
+.penguin-head {
+  width: 50%;
+  height: 45%;
+  background: linear-gradient(45deg, var(--penguin-skin), #8b8b8a);
+  border-radius: 70% 70% 65% 65%;
+  top: 10%;
+  left: 25%;
+  z-index: 1;
+}
+
+/*PENGUIN - FACE*/
+.face {
+  width: 60%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  border-radius: 70% 70% 60% 60%;
+  top: 15%;
+}
+
+.face.left {
+  left: 5%;
+}
+
+.face.right {
+  right: 5%;
+}
+
+/*PENGUIN - CHIN*/
+.chin {
+  width: 90%;
+  height: 70%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: 5%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+/*PENGUIN - EYE*/
+.eye {
+  width: 15%;
+  height: 17%;
+  background-color: black;
+  top: 45%;
+  border-radius: 50%;
+}
+
+.eye.left {
+  left: 25%;
+}
+
+.eye.right {
+  right: 25%;
+}
+
+.eye-lid {
+  width: 150%;
+  height: 100%;
+  background-color: var(--penguin-face);
+  top: 25%;
+  left: -23%;
+  border-radius: 50%;
+}
+
+/*PENGUIN - BLUSH ON THE CHEEKS*/
+.blush {
+  width: 15%;
+  height: 10%;
+  background-color: pink;
+  top: 65%;
+  border-radius: 50%;
+}
+
+.blush.left {
+  left: 15%;
+}
+
+.blush.right {
+  right: 15%;
+}
+
+/*PENGUIN - BEAK*/
+.beak {
+  height: 10%;
+  background-color: var(--penguin-picorna);
+  border-radius: 50%;
+}
+
+.beak.top {
+  width: 20%;
+  top: 60%;
+  left: 40%;
+}
+
+.beak.bottom {
+  width: 16%;
+  top: 65%;
+  left: 42%;
+}
+
+/*PENGUIN - SHIRT*/
+.shirt {
+  font: bold 25px Helvetica, sans-serif;
+  top: 165px;
+  left: 127.5px;
+  z-index: 1;
+  color: #6a6969;
+}
+
+.shirt div {
+  font-weight: initial;
+  top: 27.5px;
+  left: 5px;
+}
+
+/*PENGUIN - BODY*/
+.penguin-body {
+  width: 53%;
+  height: 45%;
+  background: linear-gradient(45deg, #868585 0%, #eae7e7 25%, white 67%);
+  border-radius: 80% 80% 100% 100%;
+  top: 40%;
+  left: 23.5%;
+}
+
+.penguin-body::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 45%;
+  background-color: var(--penguin-skin);
+  top: 10%;
+  left: 25%;
+  border-radius: 0% 0% 100% 100%;
+  opacity: 70%;
+}
+
+/*PENGUIN - ARM*/
+.arm {
+  width: 30%;
+  height: 60%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--penguin-skin)), to(#d1d2c7));
+  background: linear-gradient(90deg, var(--penguin-skin), #d1d2c7);
+  border-radius: 30% 30% 30% 120%;
+  z-index: -1;
+}
+
+.arm.left {
+  top: 35%;
+  left: 5%;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(130deg) scaleX(-1);
+          transform: rotate(130deg) scaleX(-1);
+  -webkit-animation: 3s linear infinite wave;
+          animation: 3s linear infinite wave;
+}
+
+.arm.right {
+  top: 0%;
+  right: -5%;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+/*PENGUIN - ARM WAVE ANIMATION*/
+@-webkit-keyframes wave {
+  10% {
+    -webkit-transform: rotate(110deg) scaleX(-1);
+            transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    -webkit-transform: rotate(130deg) scaleX(-1);
+            transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    -webkit-transform: rotate(110deg) scaleX(-1);
+            transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    -webkit-transform: rotate(130deg) scaleX(-1);
+            transform: rotate(130deg) scaleX(-1);
+  }
+}
+@keyframes wave {
+  10% {
+    -webkit-transform: rotate(110deg) scaleX(-1);
+            transform: rotate(110deg) scaleX(-1);
+  }
+  20% {
+    -webkit-transform: rotate(130deg) scaleX(-1);
+            transform: rotate(130deg) scaleX(-1);
+  }
+  30% {
+    -webkit-transform: rotate(110deg) scaleX(-1);
+            transform: rotate(110deg) scaleX(-1);
+  }
+  40% {
+    -webkit-transform: rotate(130deg) scaleX(-1);
+            transform: rotate(130deg) scaleX(-1);
+  }
+}
+
+/*PENGUIN - FOOT*/
+.foot {
+  width: 15%;
+  height: 30%;
+  background-color: var(--penguin-picorna);
+  top: 85%;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.foot.left {
+  left: 25%;
+  -webkit-transform: rotate(80deg);
+          transform: rotate(80deg);
+}
+
+.foot.right {
+  right: 25%;
+  -webkit-transform: rotate(-80deg);
+          transform: rotate(-80deg);
+}
+
+/*PENGUIN - GROUND*/
+.ground {
+  width: 100vw;
+  height: calc(100vh - 300px);
+  background: -webkit-gradient(linear, left top, right top, from(#68b7f0), color-stop(#f0f0e3), to(#b6ffff));
+  background: linear-gradient(90deg, #68b7f0, #f0f0e3, #b6ffff);
+  z-index: 3;
+  position: absolute;
+  margin-top: -58px;
+}
+
+/*PENGUIN - HEART ON THE SHIRT*/
+.shirt div .heart {
+  fill: red;
+  position: relative;
+  top: 5px;
+  width: 20px;
+  left: 8px;
+  -webkit-animation: pulse 1s ease infinite;
+          animation: pulse 1s ease infinite;
+}
+
+/*PENGUIN - HEART ANIMATION ON THE SHIRT*/
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*HEADING ON THE PAGE*/
+h1 {
+  font-family: 'Caudex', serif;
+  color: #e91f1f;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #e7e78b;
+  line-height: 0.75;
+  text-align: center;
+  padding-top: 30px;
+}
+
+/*PENGUIN - RESPONSIVE WEB DESIGN FOR MOBILE*/
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.3em;
+    margin-top: 30px;
+    margin-left: -15px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
